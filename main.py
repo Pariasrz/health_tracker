@@ -10,9 +10,16 @@ app = Flask(__name__)
 def home():
     return render_template("heart.html")
 
-#2nd Route
+@app.route("/heart.html")
+def heart():
+    return render_template("heart.html")
+
 @app.route("/bmi.html")
 def about():
     return render_template("bmi.html")
+
+@app.route("/about.html")
+def about():
+    return render_template("about.html")
 
 app.run()
