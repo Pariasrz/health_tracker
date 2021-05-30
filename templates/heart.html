@@ -32,7 +32,7 @@
             <li><a>Help</a></li>
         </ul>
     </div>
-    <div class="box">
+    <div class="box" method="POST", action="/">
         <div>
             <h1>Heart Disease Diagnosis</h1>
             <p>Heart disease refers to any condition affecting the heart. There are many types, some of which are preventable.Unlike cardiovascular disease, which includes problems with the entire circulatory system, heart disease affects only the heart.
@@ -58,6 +58,12 @@
                 <option value="abnoraml">2</option>
                 <option value="high">3</option>
             </select>
+            <select name="glucose" id="glucose">
+                <option value="" disabled selected>...</option>
+                <option value="1">Normal</option>
+                <option value="2">Abnormal</option>
+                <option value="3">High</option>
+            </select>   
             <label for="smoke">Do you smoke?</label>
             <select name="smoke" id="smoke">
                 <option value="" disabled selected>...</option>
@@ -87,31 +93,9 @@
         <button>Get a Healthy Diet</button>
     </div>
     <script>
-        
-        function BMI(){
-            var a = document.getElementById("w").value;
-            var b = document.getElementById("h").value;
-            var c = document.getElementById("gender").value;
-
-            var x = a/(b*b);
-
-            document.getElementById("box2").style.display="block";
-            document.getElementsByClassName("box")[0].style.display="none";
-            document.querySelector("#box2>span:nth-of-type(1)>span").innerHTML=x;
-            
-            if (x <= 18.5){
-                document.querySelector("#box2>span:nth-of-type(2)").innerHTML="You are underweight.";
-            }
-            if ((x > 18.5) && (x <= 24.9)){
-                document.querySelector("#box2>span:nth-of-type(2)").innerHTML="Your weight is normal.";
-            }
-            if ((x > 24.9) && (x <= 29.9)){
-                document.querySelector("#box2>span:nth-of-type(2)").innerHTML="You are overweight.";
-            }
-            if (x >= 30){
-                document.querySelector("#box2>span:nth-of-type(2)").innerHTML="You are obese!";
-            }
-        }
+        $.post( "/", {
+            javascript_data: data
+        });
         
     </script>
 </body>
