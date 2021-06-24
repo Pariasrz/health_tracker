@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from MLP import MLP as model
 #STATIC_DIR = os.path.abspath('/static')
 
 
