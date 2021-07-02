@@ -55,17 +55,17 @@ def login():
         #showing the results
         if prediction == 1.0:
             text = "The risk of the presence of a cardiovascular disease is " + str('{:.2f}'.format(prob)) + "% which is high."
-            return redirect(url_for("example", answer = text))
+            return redirect(url_for("result", answer = text))
         if prediction == 0.0:
             text = "The risk of the presence of a cardiovascular disease is " + str('{:.2f}'.format(prob)) + "% which is low."
-            return redirect(url_for("example", answer = text))
+            return redirect(url_for("result", answer = text))
             
     else:
         return render_template("heart.html")
 
 #define other routes
-@app.route("/example.html")
-def example():
+@app.route("/result.html")
+def result():
     return render_template("example.html")
 
 @app.route("/heart.html")
