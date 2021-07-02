@@ -42,21 +42,21 @@
         <div id="form">
             <input id="w" type="text" placeholder="Your Weight in Kilograms">
             <input type="text" id="h" placeholder="Your Height in metres">
-            <input type="text" id="ap_h" placeholder="Systolic Blood Pressure">
-            <input type="text" id="ap_l" placeholder="Diastolic Blood Pressure">
+            <input type="text" id="ap_h" placeholder="Systolic Blood Pressure Starting from 80 (mmHg)">
+            <input type="text" id="ap_l" placeholder="Diastolic Blood Pressure Starting from 50 (mmHg)">
             <input type="number" id="a" min="13" max="99" placeholder="Age">
             <label for="gender">Gender:</label>
             <select name="gender" id="gender">
                 <option value="" disabled selected>...</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
+                <option value="1">Female</option>
+                <option value="2">Male</option>
             </select>
             <label for="cholestrol">Cholestrol Level:</label>
             <select name="cholestrol" id="cholestrol">
                 <option value="" disabled selected>...</option>
-                <option value="normal">1</option>
-                <option value="abnoraml">2</option>
-                <option value="high">3</option>
+                <option value="1">Normal</option>
+                <option value="2">Abnormal</option>
+                <option value="3">High</option>
             </select>
             <select name="glucose" id="glucose">
                 <option value="" disabled selected>...</option>
@@ -67,31 +67,26 @@
             <label for="smoke">Do you smoke?</label>
             <select name="smoke" id="smoke">
                 <option value="" disabled selected>...</option>
-                <option value="smoke_yes">Yes</option>
-                <option value="smoke_no">No</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
             </select>
             <label for="alcohol">Do you drink alcohol?</label>
             <select name="alcohol" id="alcohol">
                 <option value="" disabled selected>...</option>
-                <option value="alcohol_yes">Yes</option>
-                <option value="alcohol_no">No</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
             </select>
             <label for="excercise">Do you have regular excercise?</label>
             <select name="excercise" id="excercise">
                 <option value="" disabled selected>...</option>
-                <option value="exc_yes">Yes</option>
-                <option value="exc_no">No</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
             </select>
 
-            <span>Fill the fields comlpletely</span>
-            <button onclick="BMI()" >Submit
+            <input type="submit", value="Submit" id="submit_form">
         </div>
     </div>
-    <div id="box2">
-        <span>Your BMI is: <span></span></span>
-        <span></span>
-        <button>Get a Healthy Diet</button>
-    </div>
+    
     <script>
         $.post( "/", {
             javascript_data: data
