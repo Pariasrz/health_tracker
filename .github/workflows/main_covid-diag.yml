@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'covid-diag'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C7A40A32F59E4E63A2284BC1D2FC183E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_49DDDC5007694025AFE9A88DC210F497 }}
