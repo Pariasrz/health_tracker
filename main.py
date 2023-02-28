@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, render_template, redirect, url_for
 import pickle
 
 
-loaded_model = pickle.load(open('/home/pariasrz/health_tracker/pkl_objects/finalized_model.sav', 'rb'))
+loaded_model = pickle.load(open('/home/pariasrz/health_tracker/finalized_model.sav', 'rb'))
 
 max_D = [64.9671232876712, 2.00, 200.0, 170.0, 2000.0, 1900.0, 3.0, 3.0, 1.0, 1.0, 1.0]
 min_D = [39.1095890410959, 1.0, 120.0, 30.0, 40.0, 40.0, 1.0, 1.0, 0.0, 0.0, 0.0]
